@@ -7,6 +7,13 @@ void juego();
 void instrucciones();
 void creditos();
 void detalleCanto(int opcion);
+void limpiarPantalla() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}   
 
 void Introduccion() {
 
@@ -42,6 +49,9 @@ void cantos() {
     int opc_canto;
 
     do {
+
+        limpiarPantalla();
+
         cout << "\n==========================================================================================================" << endl;
         cout << "                                                 3. CANTOS                                                " << endl;
         cout << "==========================================================================================================" << endl;
@@ -74,7 +84,7 @@ void cantos() {
             case 4:
             case 5:
             case 6:
-            case 7:
+                limpiarPantalla();
                 detalleCanto(opc_canto);
                 break;
             case 0:
@@ -106,6 +116,9 @@ void instrucciones() {
     int opc;
     
     do {
+
+        limpiarPantalla();
+
         cout << "\n===================================================" << endl;
         cout << "                 2. INSTRUCCIONES     " << endl;
         cout << "===================================================" << endl;
@@ -131,15 +144,19 @@ void instrucciones() {
 
         switch (opc) {
             case 1:
+            limpiarPantalla();
                 Introduccion();
                 break;
             case 2:
+            limpiarPantalla();
                 comoJugar();
                 break;
             case 3:
+            limpiarPantalla();
                 cantos();
                 break;
             case 4:
+            limpiarPantalla();
                 reglas();
                 break;
             case 0:
@@ -295,6 +312,8 @@ int main() {
     int opc;
 
     do{
+
+        limpiarPantalla();
     
         cout << "\n===================================================" << endl;
         cout << "               CAIDA: MENU PRINCIPAL          " << endl ;
@@ -317,12 +336,15 @@ int main() {
 
         switch(opc){
         case 1:
+        limpiarPantalla();
             juego();
             break;
         case 2:
+        limpiarPantalla();
             instrucciones();
             break;
         case 3:
+        limpiarPantalla();
             creditos();
             break;
         case 0:
